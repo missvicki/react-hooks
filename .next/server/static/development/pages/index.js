@@ -113,29 +113,61 @@ const inputElement = () => {
     0: inputText,
     1: setInputText
   } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])("");
+  const {
+    0: historyList,
+    1: setHistoryList
+  } = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])([]);
   return __jsx("div", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 6
-    },
-    __self: undefined
-  }, __jsx("input", {
-    onChange: e => {
-      setInputText(e.target.value); //updates internal state with new value in text field
-    },
-    placeholder: "Enter some text",
     __source: {
       fileName: _jsxFileName,
       lineNumber: 7
     },
     __self: undefined
+  }, __jsx("input", {
+    onChange: e => {
+      setInputText(e.target.value); //updates internal state with new value in text field
+
+      setHistoryList([...historyList, e.target.value]); //history of state changes
+    },
+    placeholder: "Enter some text",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 8
+    },
+    __self: undefined
   }), __jsx("br", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 13
+      lineNumber: 15
     },
     __self: undefined
-  }), inputText, " // reflects value in state");
+  }), inputText, __jsx("hr", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 18
+    },
+    __self: undefined
+  }), __jsx("br", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 19
+    },
+    __self: undefined
+  }), __jsx("ul", {
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 20
+    },
+    __self: undefined
+  }, historyList.map(rec => {
+    return __jsx("div", {
+      __source: {
+        fileName: _jsxFileName,
+        lineNumber: 22
+      },
+      __self: undefined
+    }, rec);
+  })));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (inputElement);
